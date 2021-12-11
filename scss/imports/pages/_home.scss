@@ -1,0 +1,208 @@
+.homewrapper {
+    .welcome {
+        padding-top: 60px;
+        .container {
+            text-align: center;
+            .txt__welcome {
+                @include text(1.4rem, "pr", normal, $black-cl, uppercase);
+                letter-spacing: 2px;
+                padding-bottom: 30px;
+            }
+            .txt__gbox {
+                @include text(2rem, "pb", 1, #525355, uppercase);
+                letter-spacing: 7px;
+                background-color: #ffde00;
+                max-width: max-content;
+                margin: 0 auto;
+            }
+            .txt__intro {
+                @include text(1.2rem, "arial", 2.2rem, #525355, inherit);
+                max-width: 760px;
+                margin: 0 auto;
+                padding-top: 25px;
+                padding-bottom: 55px;
+                strong {
+                    font-weight: bold;
+                }
+            }
+            .line__intro {
+                width: 320px;
+                height: 1px;
+                background-color: $black-cl;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+    .project {
+        padding-top: 55px;
+        padding-bottom: 60px;
+        .container {
+            .project__list {
+                @include mid(true);
+                gap: 35px;
+                padding-bottom: 20px;
+                .tag {
+                    @include text(1.2rem, "my", 3.48rem, $black-cl, uppercase);
+                    text-decoration: none;
+                    cursor: pointer;
+                    &.active {
+                        color: #ffde00;
+                    }
+                }
+            }
+            .cards {
+                --spacing: 25px;
+                --columns: 3;
+                display: none;
+                // display: flex;
+                flex-wrap: wrap;
+                margin-left: calc(-1 * var(--spacing));
+                .card {
+                    text-decoration: none;
+                    overflow: hidden;
+                    width: calc(calc(100% / var(--columns)) - var(--spacing));
+                    margin-left: var(--spacing);
+                    margin-bottom: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    cursor: pointer;
+                    overflow: hidden;
+                    &__img {
+                        width: 100%;
+                        height: 190px;
+                        position: relative;
+                        overflow: hidden;
+                        flex-shrink: 0;
+                        img {
+                            @include midimg(100%);
+                            transform: translate(-50%, -50%) scale(1);
+                            @include transition($t);
+                            vertical-align: middle;
+                        }
+                    }
+                    &__content {
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        flex: 1;
+                        overflow: hidden;
+                        &-top {
+                            flex-shrink: 0;
+                            // flex: 1;
+                            padding: 25px 25px 0 25px;
+                            position: relative;
+                            .title {
+                                @include text(1.2rem, "pb", 3.048rem, $black-cl, uppercase);
+                                &:after {
+                                    display: block;
+                                    content: '';
+                                    width: 16px;
+                                    height: 3px;
+                                    background-color: #ffde00;
+                                    margin: 0 auto;
+                                }
+                            }
+                        }
+                        &-bottom {
+                            margin-top: auto;
+                            flex: 1;
+                            // flex-shrink: 0;
+                            @include text(1.2rem, "Arial", 3rem, $black-cl, capitalize);
+                            font-weight: 400;
+                        }
+                    }
+                    &:hover {
+                        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                        .card__img {
+                            img {
+                                transform: translate(-50%, -50%) scale(1.1);
+                                @include transition($t);
+                            }
+                        }
+                    }
+                }
+                &.active {
+                    display: flex;
+                }
+            }
+            .all__works {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                padding-top: 55px;
+                width: max-content;
+                height: max-content;
+                margin: 0 auto;
+                span {
+                    @include text(1.2rem, "pb", 3.048rem, $black-cl, uppercase);
+                    @include transition($t);
+                }
+                .btn-arrow {
+                    img {
+                        width: 15px;
+                        height: 15px;
+                        transform: translateY(0);
+                        @include transition($t);
+                    }
+                }
+                &:hover {
+                    span {
+                        letter-spacing: 3px;
+                        @include transition($t);
+                    }
+                    .btn-arrow {
+                        img {
+                            transform: translateY(10px);
+                            @include transition($t);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include sm {
+        .project {
+            .container {
+                .project__list {
+                    gap: 50px;
+                }
+                .cards {
+                    --columns: 2;
+                }
+            }
+        }
+    }
+    @include xs {
+        .welcome {
+            .container {
+                .txt__intro {
+                    display: none;
+                }
+                .line__intro {
+                    display: none;
+                }
+            }
+        }
+        .project {
+            .container {
+                .project__list {
+                    gap: 50px;
+                }
+                .cards {
+                    --columns: 1;
+                }
+            }
+        }
+    }
+    @include xxs {
+        .project {
+            .container {
+                padding-left: initial;
+                padding-right: initial;
+            }
+        }
+    }
+}

@@ -1,0 +1,285 @@
+    .cafepage {
+        .background-cafe {
+            background-image: url(../img/cafe.jpg);
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            .container {
+                .box-text {
+                    text-align: center;
+                    padding-top: 60px;
+                    padding-bottom: 50px;
+                    h3 {
+                        @include text(1.4rem, "pr", 2.2rem, #fbdb01, uppercase);
+                        letter-spacing: 2px;
+                    }
+                    h1 {
+                        padding: 30px 0;
+                        @include text(2.0rem, "pb", 3.048rem, #fbdb01, uppercase);
+                        letter-spacing: 7.5px;
+                    }
+                    p {
+                        @include text(1.2rem, "Arial", 2.2rem, $white-cl, inherit);
+                        max-width: 738px;
+                        margin: 0 auto;
+                    }
+                    .title {
+                        display: block;
+                        content: '';
+                        padding-top: 60px;
+                        &:before {
+                            display: block;
+                            content: '';
+                            background-color: #fbdb01;
+                            width: 320px;
+                            height: 1px;
+                            margin: 0 auto;
+                        }
+                        a {
+                            display: inline-block;
+                            text-decoration: none;
+                            h3 {
+                                padding-top: 30px;
+                                color: $white-cl;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .backround-glr {
+            background-color: #19191a;
+            // padding-bottom: 80px;
+            width: 100%;
+            height: 636px;
+            .container {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                .gallery {
+                    width: 100%;
+                    height: 100%;
+                    &__wrapper {
+                        width: 100%;
+                        height: 100%;
+                        .gallery-carousel {
+                            width: 100%;
+                            height: 100%;
+                            .flickity-viewport {
+                                height: 100% !important;
+                                width: 100% !important;
+                            }
+                            .list-carousel {
+                                width: 100%;
+                                height: 100%;
+                                margin: 0 auto;
+                                display: grid;
+                                grid-template-columns: repeat(3, 1fr);
+                                grid-auto-rows: 240px 240px;
+                                gap: 20px;
+                                overflow: hidden;
+                                .carousel {
+                                    cursor: pointer;
+                                    position: relative;
+                                    overflow: hidden;
+                                    img {
+                                        vertical-align: middle;
+                                        @include midimg(100%);
+                                        transform: translate(-50%, -50%) scale(1);
+                                        @include transition($t);
+                                    }
+                                    &:before {
+                                        position: absolute;
+                                        content: '';
+                                        background-color: #0000004d;
+                                        @include transition($t);
+                                        width: 100%;
+                                        height: 100%;
+                                        z-index: 99;
+                                    }
+                                    &:hover {
+                                        img {
+                                            transform: translate(-50%, -50%) scale(1.2);
+                                            @include transition($t);
+                                        }
+                                        &:before {
+                                            background-color: transparent;
+                                            @include transition($t);
+                                        }
+                                    }
+                                }
+                                .carousel:nth-child(1) {
+                                    grid-row: 1/3;
+                                    grid-column: 1/2;
+                                }
+                                .carousel:nth-child(2) {
+                                    grid-row: 1/2;
+                                    grid-column: 2/4;
+                                }
+                            }
+                        }
+                    }
+                }
+                .net-prev {
+                    // justify-content: flex-end;
+                    padding-top: 40px;
+                    position: absolute;
+                    bottom: 60px;
+                    right: 15px;
+                    .btn {
+                        img {
+                            vertical-align: middle;
+                            filter: invert(79%) sepia(18%) saturate(3056%) hue-rotate( 6deg) brightness(107%) contrast(97%);
+                        }
+                        p {
+                            color: #fbdb01;
+                        }
+                    }
+                    .line-height {
+                        background: #fbdb01;
+                    }
+                }
+            }
+        }
+        .career {
+            padding-top: 60px;
+            padding-bottom: 100px;
+            .container {
+                text-align: center;
+                h3 {
+                    @include text(1.4rem, "pr", 2.2rem, $black-cl, uppercase);
+                    letter-spacing: 2px;
+                    padding-bottom: 30px;
+                }
+                p {
+                    @include text(1.2rem, "Arial", 2.2rem, $black-cl, inherit);
+                    max-width: 445px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    
+    @include sm {
+        .cafepage {
+            .backround-glr {
+                height: 500px;
+                .container {
+                    .gallery {
+                        &__wrapper {
+                            .gallery-carousel {
+                                .list-carousel {
+                                    width: 100%;
+                                    height: 100%;
+                                    margin: 0 auto;
+                                    display: grid;
+                                    grid-template-columns: repeat(3, 1fr);
+                                    grid-auto-rows: 178px 178px;
+                                    gap: 20px;
+                                    overflow: hidden;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @include xs {
+        .background-cafe {
+            background-position-x: 25%;
+            // background-image: url(../img/cafe-mobile.jpg) !important;
+        }
+        .cafepage {
+            .backround-glr {
+                height: 980px;
+                .container {
+                    .gallery {
+                        &__wrapper {
+                            .gallery-carousel {
+                                .list-carousel {
+                                    width: 100%;
+                                    height: 100%;
+                                    margin: 0 auto;
+                                    display: grid;
+                                    grid-template-columns: repeat(1, 1fr);
+                                    grid-auto-rows: 200px 200px;
+                                    gap: 20px;
+                                    overflow: hidden;
+                                    .carousel:nth-child(1) {
+                                        grid-row: initial;
+                                        grid-column: initial;
+                                    }
+                                    .carousel:nth-child(2) {
+                                        grid-row: initial;
+                                        grid-column: initial;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .net-prev {
+                        right: initial;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+        }
+    }
+    
+    @include xxs {
+        .background-cafe {
+            background-position-x: 35%;
+            // background-image: url(../img/cafe-mobile.jpg) !important;
+            .container {
+                .box-text {
+                    p {
+                        padding: 0 20px;
+                    }
+                    .title {
+                        &:before {
+                            width: 260px !important;
+                        }
+                    }
+                }
+            }
+        }
+        .cafepage {
+            .backround-glr {
+                height: 860px;
+                .container {
+                    .gallery {
+                        &__wrapper {
+                            .gallery-carousel {
+                                .list-carousel {
+                                    width: 100%;
+                                    height: 100%;
+                                    margin: 0 auto;
+                                    display: grid;
+                                    grid-template-columns: repeat(1, 1fr);
+                                    grid-auto-rows: 170px 170px;
+                                    gap: 20px;
+                                    overflow: hidden;
+                                    .carousel:nth-child(1) {
+                                        grid-row: initial;
+                                        grid-column: initial;
+                                    }
+                                    .carousel:nth-child(2) {
+                                        grid-row: initial;
+                                        grid-column: initial;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .net-prev {
+                        right: initial;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+        }
+    }

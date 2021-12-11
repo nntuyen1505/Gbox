@@ -1,0 +1,271 @@
+        .studiopage {
+            padding-top: 70px;
+            padding-bottom: 60px;
+            --pdl: 80px;
+            --pdr: 30px;
+            .container {
+                .studio {
+                    &__box {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        column-gap: 20px;
+                        .item {
+                            text-decoration: none;
+                            display: flex;
+                            flex-direction: column;
+                            cursor: pointer;
+                            padding-bottom: 40px;
+                            &-img {
+                                flex-shrink: 0;
+                                position: relative;
+                                overflow: hidden;
+                                width: 100%;
+                                height: 300px;
+                                &:before {
+                                    position: absolute;
+                                    content: '';
+                                    background-color: rgba(0, 0, 0, 0.4);
+                                    width: 100%;
+                                    height: 100%;
+                                    top: 0;
+                                    left: 0;
+                                }
+                                img {
+                                    vertical-align: middle;
+                                    @include midimg(100%);
+                                }
+                            }
+                            &-content {
+                                flex: 1;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                @include transition($t);
+                                // background-color: #525355;
+                                .left {
+                                    background-color: #ffde00;
+                                    position: relative;
+                                    min-width: 120px;
+                                    min-height: 120px;
+                                    .number {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        flex-direction: column;
+                                        @include mid(false);
+                                        flex-shrink: 0;
+                                        p {
+                                            @include text(1.1rem, "pr", 2rem, $black-cl, uppercase);
+                                            font-weight: 600;
+                                        }
+                                        h1 {
+                                            @include text(6.146rem, "din", 1, $black-cl, uppercase);
+                                        }
+                                    }
+                                }
+                                .right {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding-left: var(--pdl);
+                                    padding-right: var(--pdr);
+                                    flex: 1;
+                                    .title {
+                                        display: flex;
+                                        flex-direction: column;
+                                        span {
+                                            @include text(1.2rem, "pr", 3.248rem, $black-cl, uppercase);
+                                            font-weight: 600;
+                                        }
+                                        p {
+                                            @include text(1.2rem, "pr", 2rem, $black-cl, inherit);
+                                            @include overtext(2);
+                                            font-weight: 600;
+                                        }
+                                    }
+                                    .detail {
+                                        display: flex;
+                                        align-items: center;
+                                        flex-direction: column;
+                                        p {
+                                            @include text(1.2rem, "pb", 3.248rem, $black-cl, uppercase);
+                                        }
+                                        img {
+                                            width: 20px;
+                                            height: 20px;
+                                            transform: translateY(0);
+                                            @include transition($t);
+                                        }
+                                    }
+                                }
+                            }
+                            &:hover {
+                                .item-img {
+                                    &:before {
+                                        background-color: transparent;
+                                    }
+                                    // img {
+                                    //     transform: scale(1.2);
+                                    //     @include transition($t);
+                                    // }
+                                }
+                                .item-content {
+                                    background-color: #525355;
+                                    @include transition($t);
+                                    .right {
+                                        .title,
+                                        .detail {
+                                            span,
+                                            p {
+                                                color: #fff;
+                                            }
+                                            img {
+                                                filter: invert(79%) sepia(18%) saturate(3056%) hue-rotate( 6deg) brightness(107%) contrast(97%);
+                                                transform: translateY(10px);
+                                                @include transition($t);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        @include sm {
+            .studiopage {
+                padding-top: 72px;
+                --pdl: 25px;
+                --pdr: 15px;
+                .container {
+                    .studio {
+                        &__box {
+                            .item {
+                                &-img {
+                                    height: 250px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        @include xs {
+            .studiopage {
+                padding-top: 72px;
+                --pdl: 25px;
+                --pdr: 30px;
+                .container {
+                    .studio {
+                        &__box {
+                            grid-template-columns: repeat(1, 1fr);
+                            .item {
+                                &-img {
+                                    height: 315px;
+                                }
+                                &-content {
+                                    .left {
+                                        min-width: 75px;
+                                        min-height: 74px;
+                                        .number {
+                                            h1 {
+                                                font-size: 5rem;
+                                            }
+                                        }
+                                    }
+                                    .right {
+                                        padding-right: 0;
+                                        .detail {
+                                            margin-top: 20px;
+                                            p {
+                                                display: none;
+                                            }
+                                            img {
+                                                transform: rotate(-90deg);
+                                            }
+                                        }
+                                    }
+                                }
+                                &:hover {
+                                    .item-content {
+                                        .right {
+                                            .detail {
+                                                img {
+                                                    transform: rotate(-90deg) translateX(-10px);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        @include xxs {
+            .studiopage {
+                padding-top: 72px;
+                --pdl: 25px;
+                --pdr: 30px;
+                .container {
+                    .studio {
+                        &__box {
+                            .item {
+                                &-img {
+                                    height: 340px;
+                                }
+                                &-content {
+                                    .left {
+                                        min-width: 75px;
+                                        min-height: 74px;
+                                        .number {
+                                            h1 {
+                                                font-size: 5rem;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        @include maxW(480px) {
+            .studiopage {
+                .container {
+                    .studio {
+                        &__box {
+                            .item {
+                                &-img {
+                                    height: 280px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        @include maxW(320px) {
+            .studiopage {
+                .container {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    .studio {
+                        &__box {
+                            .item {
+                                &-img {
+                                    height: 187px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }

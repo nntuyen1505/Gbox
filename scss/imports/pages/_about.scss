@@ -1,0 +1,73 @@
+.aboutpage {
+    .background-about {
+        background-image: url(../img/bg-about.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        padding-top: 100px;
+        @include sm {
+            background-position-x: 100%;
+        }
+        @include xxs {
+            background-image: url(../img/bg-about-moible.jpg);
+            background-position-y: 100%;
+            background-position-x: initial;
+        }
+        .container {
+            .about {
+                h1 {
+                    @include text(3.6rem, "pb", 5.8rem, #ffde00, uppercase);
+                    letter-spacing: 24px;
+                    padding-bottom: 20px;
+                }
+                >p {
+                    @include text(1.8rem, "pr", 4rem, $white-cl, inherit);
+                    max-width: 868px;
+                    @include sm {
+                        max-width: initial;
+                    }
+                }
+                .more-book {
+                    .booknow {
+                        text-align: center;
+                        display: flex;
+                        align-items: initial;
+                        flex-direction: row-reverse;
+                        justify-content: flex-end;
+                        gap: 20px;
+                        >p {
+                            color: $white-cl;
+                            text-align: left;
+                        }
+                        .btn-book {
+                            background-color: #ffde00;
+                            p {
+                                color: $black-cl;
+                            }
+                        }
+                    }
+                }
+                @include xxs {
+                    h1 {
+                        font-size: 2.8rem;
+                        line-height: 5.8rem;
+                        letter-spacing: 20px;
+                    }
+                    >p {
+                        font-size: 1.6rem;
+                        line-height: 3.4rem;
+                    }
+                    .more-book {
+                        .booknow {
+                            >p {
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

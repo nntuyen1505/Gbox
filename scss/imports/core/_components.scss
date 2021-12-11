@@ -1,0 +1,161 @@
+// css components
+main.mg {
+    @include sm {
+        margin-top: 72px;
+    }
+}
+
+.carousel.is-fullscreen .carousel-cell {
+    height: 100%;
+}
+
+.flickity-page-dots {
+    position: absolute;
+    width: auto;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    line-height: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    .dot {
+        background: #ffde00 !important;
+    }
+}
+
+button.flickity-button.flickity-prev-next-button {
+    display: none;
+}
+
+.main-carousel.is-fullscreen {
+    button.flickity-button.flickity-prev-next-button {
+        display: block;
+    }
+    .flickity-viewport {
+        .flickity-slider {
+            .carousel {
+                height: 100% !important;
+                img {
+                    vertical-align: middle;
+                    max-width: 100%;
+                    min-width: initial !important;
+                    min-height: initial !important;
+                    object-fit: initial !important;
+                    position: initial !important;
+                    top: initial !important;
+                    left: initial !important;
+                    transform: initial !important;
+                    position: initial !important;
+                    display: block;
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.booknow {
+    padding-top: 50px;
+    padding-bottom: 70px;
+    text-align: center;
+    @include mid(true);
+    flex-direction: column;
+    img {
+        width: 15px;
+        height: auto;
+        padding-bottom: 20px;
+    }
+    .btn-book {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: #525355;
+        border-radius: 10px;
+        position: relative;
+        p {
+            @include mid;
+            @include text(2.2rem, "peb", 3.048rem, #ffde00, uppercase);
+            text-align: center;
+        }
+    }
+}
+
+.input-lable {
+    border: 0;
+    border-bottom: 1px solid $black-cl;
+    background: transparent;
+    outline: 0;
+    color: $black-cl;
+    font-size: 1.5rem;
+}
+
+input {
+    background: transparent;
+    outline: 0;
+    border: 1px solid #000;
+}
+
+textarea {
+    background: transparent;
+    outline: 0;
+    border: 1px solid #000;
+}
+
+.net-prev {
+    display: flex;
+    align-items: center;
+    .btn {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        img {
+            width: 10px;
+            height: 15px;
+        }
+    }
+    .line-height {
+        display: block;
+        width: 1px;
+        height: 15px;
+        background: #000;
+        margin: 0 15px;
+    }
+    .btn.prev {
+        // position: relative;
+        p {
+            // @include text(1.2rem, "pb", 3.248rem, $black-cl, capitalize);
+            padding-left: 15px;
+        }
+        img {
+            transform: rotate(90deg);
+        }
+        // &:after {
+        //     // position: absolute;
+        //     display: block;
+        //     content: '';
+        //     width: 1px;
+        //     height: 15px;
+        //     background-color: #000;
+        //     margin: 0 15px;
+        // }
+    }
+    .btn.next {
+        display: flex;
+        // flex-direction: row-reverse;
+        p {
+            // @include text(1.2rem, "pb", 3.248rem, $black-cl, capitalize);
+            padding-right: 15px;
+        }
+        img {
+            transform: rotate(-90deg);
+        }
+    }
+}

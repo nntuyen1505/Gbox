@@ -1,0 +1,323 @@
+.rentalpage.mg {
+    margin-top: initial;
+    @include sm {
+        margin-top: 72px;
+    }
+    .container {
+        display: flex;
+        @include sm {
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            @include text(3.2rem, "peb", 3.048rem, $black-cl, capitalize);
+        }
+        textarea {
+            height: 90px;
+        }
+        .rental-box {
+            flex-shrink: 0;
+            width: 260px;
+            height: 639px;
+            background-color: #525355;
+            .box-rental {
+                display: flex;
+                flex-direction: column;
+                padding-top: 75px;
+                padding-left: 20px;
+                .yellow {
+                    background-color: #ffde00;
+                    width: 120px;
+                    height: 120px;
+                    position: relative;
+                    .number {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        @include mid;
+                        p {
+                            @include text(1.1rem, "pr", 2rem, $black-cl, uppercase);
+                            font-weight: 600;
+                        }
+                        h1 {
+                            @include text(6.146rem, "din", 1, $black-cl, uppercase);
+                        }
+                    }
+                }
+                .txt {
+                    >h1 {
+                        color: $white-cl;
+                        padding: 30px 0;
+                    }
+                    span {
+                        @include text(1.2rem, "pr", 3.048rem, $white-cl, uppercase);
+                    }
+                    p {
+                        @include text(1.4rem, "pr", 2rem, $white-cl, capitalize);
+                    }
+                }
+            }
+            @include sm {
+                flex-shrink: 0;
+                width: initial;
+                height: initial;
+                padding: 20px;
+                margin-top: 32px;
+                .box-rental {
+                    display: flex;
+                    flex-direction: row;
+                    padding-top: initial;
+                    padding-left: initial;
+                    // padding-top: 32px;
+                    .txt {
+                        padding-left: 26px;
+                        >h1,
+                        span,
+                        p {
+                            // color: $black-cl;
+                        }
+                        h1 {
+                            padding: initial;
+                            padding-bottom: 20px;
+                        }
+                        p:last-child {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            @include xs {
+                flex-shrink: 0;
+                width: initial;
+                height: initial;
+                padding: initial;
+                background-color: initial;
+                margin-top: 32px;
+                .box-rental {
+                    display: flex;
+                    flex-direction: row;
+                    padding-top: initial;
+                    padding-left: initial;
+                    // padding-top: 32px;
+                    .txt {
+                        padding-left: 26px;
+                        >h1,
+                        span,
+                        p {
+                            color: $black-cl;
+                        }
+                        h1 {
+                            padding: initial;
+                            padding-bottom: 20px;
+                        }
+                        p:last-child {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .rental-form {
+            flex: 1;
+            margin-left: 50px;
+            padding-top: 75px;
+            span {
+                @include text(1.2rem, "pr", 6.6rem, $black-cl, capitalize);
+                font-weight: 500;
+            }
+            .form-flex,
+            .form-page,
+            .form-date {
+                display: flex;
+                gap: 79px;
+            }
+            .company {
+                padding-bottom: 40px;
+                h1 {
+                    padding-bottom: 15px;
+                }
+                .form-flex {
+                    form {
+                        width: 221px;
+                        .lable {
+                            display: flex;
+                            flex-direction: column;
+                            padding: 25px 0;
+                            span {
+                                line-height: 1.5;
+                                padding-bottom: 10px;
+                            }
+                            textarea {
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .booking {
+                .studio {
+                    .change-studio {
+                        display: flex;
+                        margin-left: -20px;
+                        .btn-number {
+                            cursor: pointer;
+                            text-decoration: none;
+                            background-color: $black-cl;
+                            border: 1px solid #464646;
+                            margin-left: 20px;
+                            @include transition($t);
+                            p {
+                                padding: 10px;
+                                @include text(2.4rem, "din", 1, $white-cl, uppercase);
+                            }
+                            &.active {
+                                background-color: #ffde00;
+                                p {
+                                    color: $black-cl;
+                                }
+                            }
+                        }
+                    }
+                    .form-page {
+                        padding-top: 20px;
+                        form {
+                            width: 221px;
+                            .lable {
+                                display: flex;
+                                flex-direction: column;
+                                p {
+                                    @include text(1.2rem, "pr", 3.048rem, $black-cl, capitalize);
+                                    font-weight: 500;
+                                    width: max-content;
+                                }
+                            }
+                        }
+                    }
+                    .form-date {
+                        display: flex;
+                        align-items: flex-end;
+                        form {
+                            width: 221px;
+                            .lable {
+                                display: flex;
+                                flex-direction: column;
+                            }
+                        }
+                        img {
+                            display: none;
+                            width: 15px;
+                            height: 10px;
+                        }
+                    }
+                    .form-project {
+                        form {
+                            width: 521px;
+                            .lable {
+                                display: flex;
+                                flex-direction: column;
+                            }
+                        }
+                    }
+                    .form-date,
+                    .form-project {
+                        form {
+                            .lable {
+                                input {
+                                    height: 39px;
+                                }
+                            }
+                        }
+                    }
+                    .booknow {
+                        align-items: initial;
+                        justify-content: initial;
+                        flex-direction: initial;
+                        a {
+                            flex-shrink: 0;
+                        }
+                        span {
+                            margin-left: 22px;
+                            line-height: 2.2rem;
+                            max-width: 185px;
+                            text-transform: inherit;
+                            text-align: left;
+                            strong {
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+            @include sm {
+                padding-top: 42px;
+                margin-left: initial;
+                .company {
+                    .form-flex {
+                        form {
+                            width: 50%;
+                        }
+                    }
+                }
+                .booking {
+                    .studio {
+                        .form-page,
+                        .form-date {
+                            form {
+                                width: 50%;
+                            }
+                        }
+                        .form-project {
+                            form {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            @include xs {
+                padding-top: 42px;
+                margin-left: initial;
+                .form-flex,
+                .form-page,
+                .form-date {
+                    display: flex;
+                    flex-direction: column;
+                    gap: initial;
+                }
+                .company {
+                    .form-flex {
+                        form {
+                            width: 100%;
+                        }
+                    }
+                }
+                .booking {
+                    .studio {
+                        .form-page,
+                        .form-date {
+                            align-items: center;
+                            form {
+                                width: 100%;
+                            }
+                            img {
+                                margin: 15px 0;
+                                display: block;
+                            }
+                        }
+                        .form-project {
+                            form {
+                                width: 100%;
+                            }
+                        }
+                        .booknow {
+                            span {
+                                max-width: 132px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

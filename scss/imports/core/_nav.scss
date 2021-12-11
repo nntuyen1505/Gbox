@@ -1,0 +1,100 @@
+// css navigator (Menu)
+nav {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-image: url(../img/cafe-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    // border-right: 1.5px solid #ffdd0081;
+    background-position-x: 25%;
+    width: 500px;
+    height: 100%;
+    position: fixed;
+    z-index: 50;
+    @include visible(0);
+    transform: translateX(-100%);
+    @include transition($t);
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -25%);
+        li {
+            padding-bottom: 40px;
+            a {
+                text-decoration: none;
+                @include text(2.5rem, "pb", 3.048rem, $white-cl, uppercase);
+                @include transition($t);
+                &:hover {
+                    color: #ffde00;
+                    @include transition($t);
+                }
+            }
+            @include maxH(568px) {
+                padding-bottom: 30px;
+            }
+        }
+    }
+    &.active {
+        transform: translateX(0);
+        @include transition($t);
+    }
+}
+
+@include sm {
+    nav {
+        @include visible(1);
+        ul {
+            li {
+                a {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+@include xs {
+    nav {
+        width: 400px !important;
+        ul {
+            li {
+                a {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+@include xxs {
+    nav {
+        width: 315px !important;
+        ul {
+            li {
+                padding-bottom: 25px;
+                a {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+@include maxW(320px) {
+    nav {
+        width: 100% !important;
+        ul {
+            li {
+                padding-bottom: 20px;
+                a {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
